@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>facial</title>
+    <link rel="stylesheet" src="./assets/css/style.css" />
+    <style>
+        body {
+            margin: 0px;
+            text-align: center;
+        }
+        .backImg {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100vh;
+        }
+        .mainContainer {
+            position: fixed;
+            width: 80%;
+            height: 80vh;
+            margin-top: 10vh;
+            margin-left: 10%;
+            background-color: #ffffff;
+            border-radius: 10px;
+        }
+        .logoImg {
+            width: 20%;
+            margin-top: 5vh;
+        }
+        .progressImg {
+            width: 80%;
+            cursor: pointer;
+            padding-top: 3vh;
+        }
+        .countryInput {
+            width: 50%;
+            height: 30px;
+            background-color: #f3f3f3;
+            border: 0px;
+            margin-top: 30px;
+        }
+        .searchIcon {
+            width: 12px;
+            margin-left: -26px;
+        }
+        .countryContainer {
+            width: 50%;
+            padding-top: 20px;
+            padding-bottom: 10px;
+            padding-left: 20px;
+        }
+        .country-name {
+            font-size: 10px;
+            position: absolute;
+            margin-top: 5px;
+            margin-left: 15px;
+        }
+        .sub-country {
+            margin-top: 10px;
+        }
+        .nextBtn {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 122px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <img src="./assets/img/background.png" class="backImg">
+    <div class="mainContainer">
+        <img src="./assets/img/logo 1 (1).png" class="logoImg">
+        <img src="./assets/img/progress2.png" class="progressImg">
+        <input type="text" class="countryInput" onkeydown="test(event)">
+        <img src="./assets/img/search.png" class="searchIcon">
+        <div class="countryContainer">
+            <div class="sub-country">
+                <img src="./assets/img/flag (1).png" style="width: 20px;">
+                <label class="country-name">United Kingdom</label>
+            </div>
+            <div class="sub-country">
+                <img src="./assets/img/flag (2).png" style="width: 20px;">
+                <label class="country-name">United States Of America</label>
+            </div>
+            <div class="sub-country" id="display1">
+                <img src="./assets/img/flag (3).png" style="width: 20px;">
+                <label class="country-name">Saudi Arabia</label>
+            </div>
+            <div class="sub-country" id="display2">
+                <img src="./assets/img/flag (4).png" style="width: 20px;">
+                <label class="country-name">United Arab Emirates</label>
+            </div>
+        </div>
+        <img src="./assets/img/button.png" class="nextBtn" onclick="next()">
+    </div>
+    <script>
+        function next() {
+            window.location = '/Work/Vue/facial/index3.html'
+        }
+        function test(e) {
+            if(e.keyCode == 13) {
+                var display1 = document.getElementById('display1');
+                display1.style.display = 'none'
+                var display2 = document.getElementById('display2');
+                display2.style.display = 'none'
+            }
+            console.log(e)
+        }
+    </script>
+</body>
+</html>
